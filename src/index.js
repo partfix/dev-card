@@ -54,11 +54,18 @@ const skillsArr = [
     color: "violet",
     textColor: "black",
     level: "Advance"
+  },
+  {
+    skill: "Figma/Design",
+    color: "purple",
+    textColor: "white",
+    level: "Intermediate"
   }
 ];
 
 function App() {
   return (
+
     <div className="card">
       <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
       <div className="data">
@@ -66,6 +73,8 @@ function App() {
         <SkillList />
       </div>
     </div>
+
+
   );
 }
 
@@ -87,35 +96,34 @@ function Intro({ name, intro }) {
 }
 
 function SkillList() {
-  const ifExist = skillsArr
-  const count = ifExist.length // true
+  const deferChecker = skillsArr;
+  const defer = deferChecker.length;
 
 
   return (
     <div className='skill-list' >
-      {count ? (ifExist.map((skill) => <Skill defaultVal={skill.skill} showSkill={skill} key={skill.skill} />)) : <PopMessage />}
+      {defer ? (skillsArr.map((def) => <Skill skill={def.skill} color={def.color} levels={def.level} txtColor={def.textColor} />)) : <PopMessage />}
+      {/*we use the props in our array*/}
     </div>
   )
 }
 
+function Skill({ skill, color, levels, txtColor }) {
+
+  return (
+    <div className='skill' style={{ backgroundColor: color, color: txtColor }}>
+      <span>{skill}</span>
+      <span>{levels === 'Beginner' && '👶🏻'}</span>
+      <span>{levels === 'Intermediate' && '👍🏻'}</span>
+      <span>{levels === 'Advance' && '💪🏻'}</span>
+    </div>
+  )
+}
 
 function PopMessage() {
   return (
     <span>You don't have data!</span>
   )
 }
-
-function Skill({ showSkill, defaultVal }) {
-
-  return (
-    <div className='skill' style={{ backgroundColor: showSkill.color, color: showSkill.textColor, fontWeight: showSkill.fw }}>
-      <span>{defaultVal}</span>
-      <span>{showSkill.level === 'Beginner' && '👶🏻'}</span>
-      <span>{showSkill.level === 'Intermediate' && '👍🏻'}</span>
-      <span>{showSkill.level === 'Advance' && '💪🏻'}</span>
-    </div>
-  )
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<React.StrictMode><App /></React.StrictMode>)
