@@ -60,7 +60,7 @@ const skillsArr = [
     color: "purple",
     textColor: "white",
     level: "Intermediate"
-  }
+  },
 ];
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
     <div className="card">
       <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
       <div className="data">
-        <Intro name='John' intro='Aspring Full stack webdveloper, currently learning React.' />
+        <Intro name='John' intro='Aspring Full stack webdveloper, currently learning React. I also like the idea of Mobile Application and AI integration' />
         <SkillList />
       </div>
     </div>
