@@ -52,3 +52,32 @@ h1 {
 	gap: 8px;
 	font-weight: 500;
 }
+
+.promise {
+	background: #10b981;
+	margin-left: 0.1em;
+	font-size: 0.7em;
+	color: white;
+	padding: 0.4rem;
+	border-radius: 0.5em;
+	position: static;
+}
+
+.nothing {
+	background-color: #f7f7f7;
+	color: black;
+	font-size: 0.8em;
+	border: 0.2em salmon solid;
+	padding: 0.2rem;
+}
+
+.dsgn-btn {
+	padding: 0.5em;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+	background-color: #f8843f;
+	border: none;
+	color: khaki;
+	border-radius: 0.5rem;
+	font-weight: bold;
+}

@@ -65,10 +65,10 @@ const skillsArr = [
 ];
 
 const profiler = [
-  "I'm john",
-  "a webdevloper",
-  "learning react",
-  "to become a FULLSTACK dev"
+  "Click me to reveal a secret",
+  "I want to be...",
+  "someone i want always to become",
+  "to be someone i will look up always."
 ]
 
 function App() {
@@ -95,36 +95,28 @@ function Avatar({ name, photoPath }) {
   )
 }
 
+
 function Intro({ name, intro }) {
   const [adds, adder] = useState(0);
 
 
-  function onMove() {
+  function onMoving() {
     if (adds < 3) {
       adder(adds + 1)
+    } else {
+      adder(0) //to go back
     }
   }
+
 
   return (
     <main>
       <h1>{name}</h1>
       <p>{intro}</p>
-      <button style={{
-        padding: "0.5em",
-        marginTop: "0.5em", marginRight: "0.5em",
-        backgroundColor: "#F8843F",
-        border: "none", color: "khaki",
-        borderRadius: "0.5rem",
-        fontWeight: "bold"
-      }}>Click me</button>
+      <button className='dsgn-btn' onClick={onMoving}>Click me</button>
 
-      <span style={{
-        background: "green",
-        color: "white",
-        padding: "0.2rem",
-        borderRadius: "0.2rem"
-      }} onClick={onMove}>{profiler[adds]} </span>
-    </main>
+      <span className={`promise ${adds === 0 ? "nothing" : ""}`}>{profiler[adds]}</span>
+    </main >
   )
 }
 
