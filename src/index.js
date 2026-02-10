@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import { useState } from 'react';
 
 
 const skillsArr = [
@@ -63,6 +64,13 @@ const skillsArr = [
   },
 ];
 
+const profiler = [
+  "I'm john",
+  "a webdevloper",
+  "learning react",
+  "to become a FULLSTACK dev"
+]
+
 function App() {
   return (
 
@@ -78,6 +86,7 @@ function App() {
   );
 }
 
+
 function Avatar({ name, photoPath }) {
   return (
     <header>
@@ -87,10 +96,34 @@ function Avatar({ name, photoPath }) {
 }
 
 function Intro({ name, intro }) {
+  const [adds, adder] = useState(0);
+
+
+  function onMove() {
+    if (adds < 3) {
+      adder(adds + 1)
+    }
+  }
+
   return (
     <main>
       <h1>{name}</h1>
       <p>{intro}</p>
+      <button style={{
+        padding: "0.5em",
+        marginTop: "0.5em", marginRight: "0.5em",
+        backgroundColor: "#F8843F",
+        border: "none", color: "khaki",
+        borderRadius: "0.5rem",
+        fontWeight: "bold"
+      }}>Click me</button>
+
+      <span style={{
+        background: "green",
+        color: "white",
+        padding: "0.2rem",
+        borderRadius: "0.2rem"
+      }} onClick={onMove}>{profiler[adds]} </span>
     </main>
   )
 }
