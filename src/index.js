@@ -104,7 +104,7 @@ function Intro({ name, intro }) {
     if (adds < 3) {
       adder(adds + 1)
     } else {
-      adder(0) // loop
+      adder(0)
     }
   }
 
