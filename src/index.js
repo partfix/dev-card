@@ -66,9 +66,9 @@ const skillsArr = [
 
 const profiler = [
   "Click me to reveal a secret",
-  "I want to be...",
-  "someone i want always to become",
-  "to be someone i will look up always."
+  "I will become ",
+  "someone i wanted to be",
+  "and to be someone i will look up always."
 ]
 
 function App() {
@@ -117,7 +117,6 @@ function Intro({ name, intro }) {
     </main >
   )
 }
-
 
 function SkillList() {
   const deferChecker = skillsArr;
