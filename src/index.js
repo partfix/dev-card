@@ -125,7 +125,7 @@ function SkillList() {
   return (
     <div className='skill-list' >
       {defer ? (skillsArr.map((def) => <Skill skill={def.skill} color={def.color} levels={def.level} txtColor={def.textColor} key={def.skill} />)) : <PopMessage />}
-      {/*check if true or false*/}
+      {/*true or false*/}
     </div>
   )
 }
