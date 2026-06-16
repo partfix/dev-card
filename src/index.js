@@ -2,96 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { useState } from 'react';
+import data from "./example/data.js"
+import { skillsArr, profiler } from './example/skillsArr.js';
+import Accordion from './components/Accordion.jsx';
+import Avatar from './components/Avatar.jsx';
 
-
-const skillsArr = [
-  {
-    skill: "HTML",
-    color: "orangered",
-    textColor: "white",
-    level: "Intermediate",
-
-  },
-  {
-    skill: "CSS",
-    color: "blue",
-    textColor: "white",
-    level: 'Intermediate',
-  },
-  {
-    skill: "JavaScript",
-    color: "yellow",
-    textColor: "black",
-    level: "Intermediate"
-
-  },
-  {
-    skill: "React",
-    color: "skyBlue",
-    textColor: "black",
-    level: "Beginner"
-  },
-  {
-    skill: "Version Control",
-    color: "black",
-    textColor: "white",
-    level: "Intermediate"
-
-  },
-  {
-    skill: "PHP",
-    color: "#B0B3D6",
-    textColor: "white",
-    level: "Beginner"
-  },
-  {
-    skill: "Sql",
-    color: "gray",
-    textColor: "white",
-    level: "Beginner"
-  },
-  {
-    skill: "Web design",
-    color: "violet",
-    textColor: "black",
-    level: "Advance"
-  },
-  {
-    skill: "Figma/Design",
-    color: "purple",
-    textColor: "white",
-    level: "Intermediate"
-  },
-];
-
-const profiler = [
-  "Click me to reveal a secret",
-  "I will become ",
-  "someone i wanted to be",
-  "and to be someone i will look up always."
-]
 
 function App() {
   return (
+    <div className="container">
+      <div className="card">
+        <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
+        <div className="data">
+          <Intro name='John' intro='Aspring Full Stack Web Developer, currently learning React. I also like the idea of Mobile Application and AI integration' />
+          <SkillList />
+        </div>
+      </div>
 
-    <div className="card">
-      <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
-      <div className="data">
-        <Intro name='John' intro='Aspring Full Stack Web Developer, currently learning React. I also like the idea of Mobile Application and AI integration' />
-        <SkillList />
+      <div className="accordion">
+        <Accordion res={data} />
       </div>
     </div>
   );
 }
 
-
-function Avatar({ name, photoPath }) {
-  return (
-    <header>
-      <img className='avatar' src={photoPath} alt={name}></img>
-    </header>
-  )
-}
 
 
 function Intro({ name, intro }) {
@@ -105,7 +39,6 @@ function Intro({ name, intro }) {
       adder(0)
     }
   }
-
 
   return (
     <main>
@@ -127,7 +60,7 @@ function SkillList() {
       {defer ? (skillsArr.map((def) => <Skill skill={def.skill} color={def.color} levels={def.level} txtColor={def.textColor} key={def.skill} />)) : <PopMessage />}
       {/*defer = true, then show the list.
         defer = false, then show nothing.
-      */}s
+      */}
     </div>
   )
 }
