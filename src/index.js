@@ -26,8 +26,6 @@ function App() {
   );
 }
 
-
-
 function Intro({ name, intro }) {
   const [adds, adder] = useState(0);
 
