@@ -29,7 +29,6 @@ function App() {
 function Intro({ name, intro }) {
   const [adds, adder] = useState(0);
 
-
   function onMoving() {
     if (adds < 3) {
       adder(adds + 1)
@@ -56,13 +55,9 @@ function SkillList() {
   return (
     <div className='skill-list' >
       {defer ? (skillsArr.map((def) => <Skill skill={def.skill} color={def.color} levels={def.level} txtColor={def.textColor} key={def.skill} />)) : <PopMessage />}
-      {/*defer = true, then show the list.
-        defer = false, then show nothing.
-      */}
     </div>
   )
 }
-
 
 function Skill({ skill, color, levels, txtColor }) {
 
@@ -84,4 +79,3 @@ function PopMessage() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<React.StrictMode><App /></React.StrictMode>)
-/*use to render*/
