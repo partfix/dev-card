@@ -1,26 +1,39 @@
 import React, { useState } from 'react';
 
 export default function Accordion({ res }) {
-  return (
-    <div className='accordion'>
-      {res && (res.map((item, index) => <Card title={item.header} desc={item.description} num={index} key={index} />))}
-    </div>
-  );
+	const [curOpen, setIsOpen] = useState(null);
+
+	return (
+		<div className='accordion'>
+			{res &&
+				res.map((item, index) => (
+					<Card
+						curOpen={curOpen}
+						onOpen={setIsOpen}
+						title={item.header}
+						num={index}
+						key={index}>
+						{item.description}
+					</Card>
+				))}
+		</div>
+	);
 }
-function Card({ title, desc, num }) {
-  const [isOpen, setOpen] = useState(false);
 
-  function handleToogle() {
-    setOpen(isOpen => !isOpen);
-  }
+function Card({ title, num, curOpen, onOpen, children }) {
+	const isOpen = num === curOpen;
 
-  return (
-    <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToogle}>
-      <p className='number'>{num > 5 ? `0${num + 1}` : `0${num + 1}`}</p>
-      <p className='title'>{title}</p>
+	function handleToogle() {
+		onOpen(isOpen ? null : num);
+	}
 
-      <p className="icon">{isOpen ? "-" : "+"}</p>
-      {isOpen && <div className='content-box'>{desc}</div>}
-    </div>
-  );
+	return (
+		<div className={`item ${isOpen ? 'open' : ''}`} onClick={handleToogle}>
+			<p className='number'>{num > 5 ? `0${num + 1}` : `0${num + 1}`}</p>
+			<p className='title'>{title}</p>
+
+			<p className='icon'>{isOpen ? '-' : '+'}</p>
+			{isOpen && <div className='content-box'>{children}</div>}
+		</div>
+	);
 }
