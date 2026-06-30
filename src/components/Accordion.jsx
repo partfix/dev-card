@@ -13,7 +13,7 @@ export default function Accordion({ res }) {
 						title={item.header}
 						num={index}
 						key={index}>
-						{item.description}
+						{item.description} {/*this is a children prop*/}
 					</Card>
 				))}
 		</div>

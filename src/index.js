@@ -20,7 +20,7 @@ function App() {
       </div>
 
       <div className="accordion">
-        <Accordion res={data} />
+        <Accordion res={data} /> {/*create resuable data */}
       </div>
     </div>
   );
