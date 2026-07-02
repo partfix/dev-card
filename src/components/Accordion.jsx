@@ -26,6 +26,7 @@ function Card({ title, num, curOpen, onOpen, children }) {
 
 	function handleToogle() {
 		onOpen(isOpen ? null : num);
+		/*this makes the other number go close*/
 	}
 
 	return (
