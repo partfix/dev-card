@@ -8,6 +8,8 @@ import { SkillList } from './components/SkillList.jsx';
 import { Intro } from './components/Intro.js';
 
 
+
+// this is the main app
 function App() {
   return (
     <div className="container">
