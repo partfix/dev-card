@@ -1,4 +1,5 @@
-import React, { useState, Profiler } from 'react';
+import React, { useState } from 'react';
+import { profiler } from '../example/skillsArr';
 
 export function Intro({ name, intro }) {
 	const [adds, adder] = useState(0);
@@ -20,7 +21,7 @@ export function Intro({ name, intro }) {
 			</button>
 
 			<span className={`promise ${adds === 0 ? 'nothing' : ''}`}>
-				{Profiler[adds]}
+				{profiler[adds]}
 			</span>
 		</main>
 	);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { skillsArr } from './Skill';
+import { skillsArr } from './../example/skillsArr';
 import { PopMessage } from './PopMessage';
 import { Skill } from './Skill';
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Desc from './Desc';
 
 export default function Accordion({ res }) {
 	const [curOpen, setIsOpen] = useState(null);
@@ -14,6 +15,7 @@ export default function Accordion({ res }) {
 						num={index}
 						key={index}>
 						{item.description}
+						<Desc facts={item.facts} color={item.color} />
 					</Card>
 				))}
 		</div>

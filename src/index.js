@@ -4,15 +4,14 @@ import './index.css'
 import data from "./example/data.js"
 import Accordion from './components/Accordion.jsx';
 import Avatar from './components/Avatar.jsx';
-import { SkillList } from './components/SkillList.jsx';
-import { Intro } from './components/Intro.js';
-
+import SkillList from './components/SkillList.jsx';
+import { Intro } from './components/Intro.jsx';
 
 
 // this is the main app
 function App() {
   return (
-    <div className="container">
+    <div className="container"> {/*hold the everything in one place*/}
       <div className="card">
         <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
         <div className="data">
