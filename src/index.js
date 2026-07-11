@@ -8,7 +8,6 @@ import SkillList from './components/SkillList.jsx';
 import { Intro } from './components/Intro.jsx';
 
 
-// this is the main app
 function App() {
   return (
     <div className="container"> {/*hold the everything in one place*/}
@@ -23,8 +22,11 @@ function App() {
       <div className="accordion">
         <Accordion res={data} /> {/*create resuable data */}
       </div>
+
+
     </div>
-  );
+
+  )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
