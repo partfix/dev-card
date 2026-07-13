@@ -4,6 +4,9 @@ import { profiler } from '../example/skillsArr';
 export function Intro({ name, intro }) {
 	const [adds, adder] = useState(0);
 
+	const dataHolder = profiler;
+	const dataScraper = dataHolder.length;
+
 	function onMoving() {
 		if (adds < 3) {
 			adder(adds + 1);
@@ -21,7 +24,7 @@ export function Intro({ name, intro }) {
 			</button>
 
 			<span className={`promise ${adds === 0 ? 'nothing' : ''}`}>
-				{profiler[adds]}
+				{dataScraper && dataHolder[adds]}
 			</span>
 		</main>
 	);

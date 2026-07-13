@@ -1,4 +1,4 @@
-function Desc({ facts, color }) {
+export default function Desc({ facts, color }) {
 	return (
 		<div className='skill-list'>
 			<div className='skill' style={{ backgroundColor: color, color: 'white' }}>
@@ -7,5 +7,3 @@ function Desc({ facts, color }) {
 		</div>
 	);
 }
-
-export default Desc;

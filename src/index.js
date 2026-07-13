@@ -10,7 +10,7 @@ import { Intro } from './components/Intro.jsx';
 
 function App() {
   return (
-    <div className="container"> {/*hold the everything in one place*/}
+    <div className="container">
       <div className="card">
         <Avatar name='John Dev' photoPath='pfp/sdf.jpg' />
         <div className="data">
