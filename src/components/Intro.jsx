@@ -8,6 +8,7 @@ export function Intro({ name, intro }) {
 	const dataScraper = dataHolder.length;
 
 	function onMoving() {
+		//this is counter
 		if (adds < 3) {
 			adder(adds + 1);
 		} else {

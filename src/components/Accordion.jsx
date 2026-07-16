@@ -33,7 +33,7 @@ function Card({ title, num, curOpen, onOpen, children }) {
 	return (
 		<div className={`item ${isOpen ? 'open' : ''}`} onClick={handleToogle}>
 			<p className='number'>{num > 5 ? `0${num + 1}` : `0${num + 1}`}</p>{' '}
-			{/*condition to put 0 in every num (number) that greater than 5*/}
+			{/* 0 in every num (number) that greater than 5*/}
 			<p className='title'>{title}</p>
 			<p className='icon'>{isOpen ? '-' : '+'}</p>
 			{isOpen && <div className='content-box'>{children}</div>}
